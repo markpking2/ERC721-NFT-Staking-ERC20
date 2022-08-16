@@ -17,6 +17,11 @@ contract ColorDogeNFT is ERC721 {
         colorDogeTokenAddress = _colorDogeTokenAddress;
     }
 
+    modifier onlyOwner() {
+        require(msg.sender == _owner, "not owner");
+        _;
+    }
+
     function mint(uint256 _tokenId) external {
         require(totalSupply < MAX_SUPPLY, "supply reached");
         colorDogeTokenAddress.transferFrom(msg.sender, address(this), 10 * 10**18);
@@ -28,10 +33,29 @@ contract ColorDogeNFT is ERC721 {
         return "ipfs://QmNMRKZXodDUANghAZbzQXE551j7bV1w933Y9u3Zhv8AYm/";
     }
 
+    function viewBalance() external view returns (uint256) {
+        return address(this).balance;
+    }
+
     function withdrawTokens() external onlyOwner {
         uint currentBalance = colorDogeTokenAddress.balanceOf(address(this));
         require(currentBalance > 0, "no tokens");
         colorDogeTokenAddress.transfer(_owner, currentBalance);
+    }
+
+    function withdrawEther() external onlyOwner {
+        payable(msg.sender).transfer(address(this).balance);
+    }
+
+    function approveAllColorDogeStake(bool approve) external {
+        require(nftStakeAddress != address(0), "NFT address not set");
+        _setApprovalForAll(msg.sender, nftStakeAddress, approve);
+    }
+
+    function setNFTStakeAddress(address _target) external{
+        require(msg.sender == _owner, "not owner");
+        require(_target != address(0), "0 address");
+        nftStakeAddress = _target;
     }
 
     fallback() external payable {}
