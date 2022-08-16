@@ -1,5 +1,10 @@
 # Staking and minting NFTs with ERC20 Tokens
-Deployed on Rinkerby Test Network: https://testnets.opensea.io/collection/color-doge
+Deployed on Rinkeby Test Network: https://testnets.opensea.io/collection/color-doge
+
+Verified Rinkeby Etherscan Links:
+- [ColorDogeToken](https://rinkeby.etherscan.io/address/0xf8c25e1ac8c4cac56f2000b7aff1476b6c358c52#code)
+- [ColorDogeNFT](https://rinkeby.etherscan.io/address/0x5d79123de63f7855c20ade4cc972f385b2f1bce9#code) 
+- [ColorDogeNFTStake](https://rinkeby.etherscan.io/address/0x1a5786381fdd5dc5496d2ddf0c34f658ef04470c#code)
 
 Doge images from: https://www.stickpng.com/
 
