@@ -8,7 +8,9 @@ const hre = require("hardhat");
 
 async function main() {
   const contractRegex = /--contract-file=(?<fromEnv>[a-zA-Z]+)/;
-  const contractName = process.argv.slice(2).find((str) => str.match(contractRegex));
+  const contractName = process.argv
+    .slice(2)
+    .find((str) => str.match(contractRegex));
 
   const Contract = await hre.ethers.getContractFactory(contractName);
   const contract = await Contract.deploy();
