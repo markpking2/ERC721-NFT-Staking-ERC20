@@ -1,0 +1,14 @@
+{
+  "image": "ipfs://QmVtXDnFLoeBGvksdw6isnvDWhQ2Je6cwxN58Yv7Q9iiP7/98.jpeg",
+  "name": "Pink Loaf Doge",
+  "attributes": [
+    {
+      "trait_type": "Background Color",
+      "value": "Pink"
+    },
+    {
+      "trait_type": "Doge",
+      "value": "Loaf"
+    }
+  ]
+}

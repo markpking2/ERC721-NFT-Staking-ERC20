@@ -1,0 +1,14 @@
+{
+  "image": "ipfs://QmVtXDnFLoeBGvksdw6isnvDWhQ2Je6cwxN58Yv7Q9iiP7/60.jpeg",
+  "name": "Teal Hardhat Doge",
+  "attributes": [
+    {
+      "trait_type": "Background Color",
+      "value": "Teal"
+    },
+    {
+      "trait_type": "Doge",
+      "value": "Hardhat"
+    }
+  ]
+}

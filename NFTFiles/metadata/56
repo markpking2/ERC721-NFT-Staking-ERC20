@@ -1,0 +1,14 @@
+{
+  "image": "ipfs://QmVtXDnFLoeBGvksdw6isnvDWhQ2Je6cwxN58Yv7Q9iiP7/56.jpeg",
+  "name": "Cyan Cute Doge",
+  "attributes": [
+    {
+      "trait_type": "Background Color",
+      "value": "Cyan"
+    },
+    {
+      "trait_type": "Doge",
+      "value": "Cute"
+    }
+  ]
+}

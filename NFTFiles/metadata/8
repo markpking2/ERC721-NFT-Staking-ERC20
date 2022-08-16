@@ -1,0 +1,14 @@
+{
+  "image": "ipfs://QmVtXDnFLoeBGvksdw6isnvDWhQ2Je6cwxN58Yv7Q9iiP7/8.jpeg",
+  "name": "Red Loaf Doge",
+  "attributes": [
+    {
+      "trait_type": "Background Color",
+      "value": "Red"
+    },
+    {
+      "trait_type": "Doge",
+      "value": "Loaf"
+    }
+  ]
+}

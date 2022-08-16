@@ -1,0 +1,14 @@
+{
+  "image": "ipfs://QmVtXDnFLoeBGvksdw6isnvDWhQ2Je6cwxN58Yv7Q9iiP7/42.jpeg",
+  "name": "White Classic Doge",
+  "attributes": [
+    {
+      "trait_type": "Background Color",
+      "value": "White"
+    },
+    {
+      "trait_type": "Doge",
+      "value": "Classic"
+    }
+  ]
+}

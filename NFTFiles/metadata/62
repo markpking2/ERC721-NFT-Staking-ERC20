@@ -1,0 +1,14 @@
+{
+  "image": "ipfs://QmVtXDnFLoeBGvksdw6isnvDWhQ2Je6cwxN58Yv7Q9iiP7/62.jpeg",
+  "name": "Teal Classic Doge",
+  "attributes": [
+    {
+      "trait_type": "Background Color",
+      "value": "Teal"
+    },
+    {
+      "trait_type": "Doge",
+      "value": "Classic"
+    }
+  ]
+}

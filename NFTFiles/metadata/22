@@ -1,0 +1,14 @@
+{
+  "image": "ipfs://QmVtXDnFLoeBGvksdw6isnvDWhQ2Je6cwxN58Yv7Q9iiP7/22.jpeg",
+  "name": "Yellow Classic Doge",
+  "attributes": [
+    {
+      "trait_type": "Background Color",
+      "value": "Yellow"
+    },
+    {
+      "trait_type": "Doge",
+      "value": "Classic"
+    }
+  ]
+}
