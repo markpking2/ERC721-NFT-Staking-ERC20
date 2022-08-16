@@ -11,4 +11,5 @@ artifacts
 
 #Other
 .idea
+.env
 
