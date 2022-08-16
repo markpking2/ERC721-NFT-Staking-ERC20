@@ -5,11 +5,11 @@ import "@openzeppelin/contracts/token/ERC20/ERC20.sol";
 pragma solidity 0.8.9;
 
 contract ColorDogeToken is ERC20 {
-    address immutable public _owner;
+    address public immutable _owner;
     address private nftAddress;
     address private nftStakeAddress;
 
-    constructor() ERC20("Color Doge Token", "CDTK"){
+    constructor() ERC20("Color Doge Token", "CDTK") {
         _owner = msg.sender;
     }
 
@@ -26,30 +26,31 @@ contract ColorDogeToken is ERC20 {
     }
 
     function mint() external payable {
-        uint toMint = msg.value * 1000; // 1000 tokens per ether
+        uint256 toMint = msg.value * 1000; // 1000 tokens per ether
         require(toMint > 0, "must send at least 2000 wei");
-        if(totalSupply() + toMint > 100_000_000 * 10**18){
+        if (totalSupply() + toMint > 100_000_000 * 10**18) {
             revert("Can't mint more than total supply.");
         }
         _mint(msg.sender, toMint);
     }
 
-    function mint(address _to, uint _amount) public {
+    function mint(address _to, uint256 _amount) public {
         require(msg.sender == nftStakeAddress, "not nft stake contract");
         _mint(_to, _amount);
-
-
     }
 
     function approveAllNFT(bool approve) external {
         require(address(nftAddress) != address(0), "NFT address not set");
-        uint amount = approve == true ? type(uint).max : 0;
+        uint256 amount = approve == true ? type(uint256).max : 0;
         _approve(msg.sender, nftAddress, amount);
     }
 
     function approveAllStake(bool approve) external {
-        require(address(nftStakeAddress) != address(0), "Stake address not set");
-        uint amount = approve == true ? type(uint).max : 0;
+        require(
+            address(nftStakeAddress) != address(0),
+            "Stake address not set"
+        );
+        uint256 amount = approve == true ? type(uint256).max : 0;
         _approve(msg.sender, nftStakeAddress, amount);
     }
 

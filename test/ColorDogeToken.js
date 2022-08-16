@@ -5,10 +5,6 @@ const {
   ethers: { BigNumber, ...ethers },
 } = require("hardhat");
 
-const mintAmount = BigNumber.from("1000").mul(
-  BigNumber.from("10").pow(BigNumber.from("18"))
-);
-
 describe("ColorDogeToken contract", function () {
   async function deployFixture(
     { autoAllowance, autoSetAddresses } = {

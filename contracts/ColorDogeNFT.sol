@@ -8,7 +8,7 @@ pragma solidity 0.8.9;
 contract ColorDogeNFT is ERC721 {
     uint256 public totalSupply = 0;
     uint256 public constant MAX_SUPPLY = 100;
-    address immutable public _owner;
+    address public immutable _owner;
     IERC20 private immutable colorDogeTokenAddress;
     address nftStakeAddress;
 
@@ -24,7 +24,11 @@ contract ColorDogeNFT is ERC721 {
 
     function mint(uint256 _tokenId) external {
         require(totalSupply < MAX_SUPPLY, "supply reached");
-        colorDogeTokenAddress.transferFrom(msg.sender, address(this), 10 * 10**18);
+        colorDogeTokenAddress.transferFrom(
+            msg.sender,
+            address(this),
+            10 * 10**18
+        );
         _mint(msg.sender, _tokenId);
         totalSupply++;
     }
@@ -38,7 +42,7 @@ contract ColorDogeNFT is ERC721 {
     }
 
     function withdrawTokens() external onlyOwner {
-        uint currentBalance = colorDogeTokenAddress.balanceOf(address(this));
+        uint256 currentBalance = colorDogeTokenAddress.balanceOf(address(this));
         require(currentBalance > 0, "no tokens");
         colorDogeTokenAddress.transfer(_owner, currentBalance);
     }
@@ -52,7 +56,7 @@ contract ColorDogeNFT is ERC721 {
         _setApprovalForAll(msg.sender, nftStakeAddress, approve);
     }
 
-    function setNFTStakeAddress(address _target) external{
+    function setNFTStakeAddress(address _target) external {
         require(msg.sender == _owner, "not owner");
         require(_target != address(0), "0 address");
         nftStakeAddress = _target;
