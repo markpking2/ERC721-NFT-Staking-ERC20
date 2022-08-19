@@ -29,9 +29,9 @@ describe("ColorDogeNFT contract", function () {
     await ColorDogeStake.deployed();
 
     if (autoSetAddresses) {
-      await ColorDogeToken.setNFTAddress(ColorDogeNFT.address);
-      await ColorDogeToken.setNFTStakeAddress(ColorDogeStake.address);
-      await ColorDogeNFT.setNFTStakeAddress(ColorDogeStake.address);
+      await ColorDogeToken.setNFTAddress(ColorDogeNFT.signer.address);
+      await ColorDogeToken.setNFTStakeAddress(ColorDogeStake.signer.address);
+      await ColorDogeNFT.setNFTStakeAddress(ColorDogeStake.signer.address);
     }
 
     if (autoAllowance) {
